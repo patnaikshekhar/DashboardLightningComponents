@@ -1,0 +1,31 @@
+<aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
+	
+    <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css, /resource/libraries/libraries/fontawesome/css/font-awesome.min.css" />
+    <ltng:require scripts="/resource/libraries/libraries/app/common.js" />
+    
+    <aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
+    
+    <aura:attribute name="apiKey" type="String" />
+    
+    <aura:attribute name="addressStreetField" type="String" default="BillingStreet"/>
+    <aura:attribute name="addressCityField" type="String" default="BillingCity"/>
+    <aura:attribute name="addressStateField" type="String" default="BillingState"/>
+    <aura:attribute name="addressPostCodeField" type="String" default="BillingPostalCode"/>
+    <aura:attribute name="addressCountryField" type="String" default="BillingCountry"/>
+    <aura:attribute name="directions" type="boolean" default="true"/>
+    
+    <aura:attribute name="mapURL" type="String" />
+    
+    <div>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title pull-left">Map</h3>
+                </div>
+             
+                <iframe aura:id="map" frameborder="0" style="border:0" src="{! v.mapURL }" allowfullscreen="false">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</aura:component>

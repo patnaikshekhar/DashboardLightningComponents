@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="titleField" label="Title" description="The title of the card" />
+	<design:attribute name="fieldNames" label="Fields" description="Fields to display on card" />
+</design:component>

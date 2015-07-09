@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Change the search string">
+    <aura:attribute name="text" type="String"/>
+</aura:event>

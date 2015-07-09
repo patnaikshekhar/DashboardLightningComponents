@@ -1,0 +1,3 @@
+<design:component>
+	<design:attribute name="types" label="Name of Objects" description="Name of objects to be included" />
+</design:component>

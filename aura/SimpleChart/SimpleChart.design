@@ -1,0 +1,9 @@
+<design:component>
+	<design:attribute name="title" label="Title" description="Title of graph" />
+    <design:attribute name="graphType" label="Type of graph" description="Type of graph" dataSource="Pie,Bar,Donut" />
+    <design:attribute name="object" label="Object" description="Main object to get data from" />
+    <design:attribute name="relatedField" label="Related Field" description="Related field from context object" />
+    <design:attribute name="groupingField" label="Grouping Field" description="Field to create groupings on" />
+    <design:attribute name="aggregateField" label="Aggregate Field" description="Field to aggregate on" />
+    <design:attribute name="aggregateFunction" label="Aggregate Function" description="Function to use for aggregation" dataSource="Count,Sum,Avg"/>
+</design:component>

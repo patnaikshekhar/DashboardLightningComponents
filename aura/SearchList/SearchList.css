@@ -1,0 +1,53 @@
+.THIS .search {
+    width: 100%;
+    height: 2em;
+    padding-left: 40px;
+}
+
+.THIS .search-font {
+    font-size: 1.8em !important;
+}
+
+.THIS .container {
+    width: 100%;
+}
+
+.THIS {
+    margin-top: 20px;
+}
+
+.THIS .panel-body {
+    height: 500px;
+    overflow: auto;
+}
+
+.THIS .list-group {
+    margin-top: 10px;
+}
+
+.THIS .search-group {
+    padding: 10px;
+}
+
+.THIS .list-group-item {
+    margin: 0px;
+}
+
+.THIS .list-group-item:hover {
+    padding-left: 0px !important;
+}
+
+.THIS .details-button {
+    position: absolute;
+    right: 6px;
+    top: 25%;
+    display: none;
+}
+
+.THIS .list-group-item.selected-row .details-button {
+    display: block;
+}
+
+.THIS a.list-group-item:before {
+    color: white;
+}

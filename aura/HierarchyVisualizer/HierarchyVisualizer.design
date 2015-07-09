@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="title" label="Title" description="Title" />
+    <design:attribute name="parentField" label="Parent Field" description="Parent Field on Object" />
+    <design:attribute name="nameField" label="Name Field" description="Field which is used as the name display on the nodes" />
+</design:component>

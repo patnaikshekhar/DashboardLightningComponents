@@ -1,0 +1,9 @@
+<design:component>
+    <design:attribute name="apiKey" label="API Key" description="The Google Maps API Key which you can get from the Google Developer Console" />	
+    <design:attribute name="addressStreetField" label="Address Street Field" description="Street field to use on the object"/>
+    <design:attribute name="addressCityField" label="Address City Field" description="City field to use on the object"/>
+    <design:attribute name="addressStateField" label="Address State Field" description="State field to use on the object"/>
+    <design:attribute name="addressPostCodeField" label="Address PostCode Field" description="Post Code field to use on the object"/>
+    <design:attribute name="addressCountryField" label="Address Country Field" description="Country field to use on the object"/>
+    <design:attribute name="directions" label="Directions" description="Show show directions?" />
+</design:component>

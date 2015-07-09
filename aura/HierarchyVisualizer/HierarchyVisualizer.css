@@ -1,0 +1,28 @@
+.THIS hidden {
+    display: none;
+}
+
+.THIS.container {
+    width: 100%;
+    height: 100%;
+}
+
+.THIS {
+    margin-top: 20px;
+}
+
+.THIS .tree-canvas {
+    height: 400px;
+}
+
+.THIS .tree-canvas .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.THIS .tree-canvas .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+}

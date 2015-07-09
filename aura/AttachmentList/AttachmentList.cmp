@@ -1,0 +1,15 @@
+<aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
+	<aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
+    
+    <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css" />
+    <ltng:require scripts="/resource/libraries/libraries/app/common.js" />
+    
+    <div class="container hidden">
+        <div class="panel panel-default bootcards-chart">
+            <div class="panel-heading">
+                <h3 class="panel-title">Attachments</h3>
+            </div>
+            <div class="attachment-list"></div>
+        </div>
+    </div>
+</aura:component>

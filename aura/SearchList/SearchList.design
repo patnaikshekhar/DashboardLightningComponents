@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="object" description="Object Name to search for" />
+    <design:attribute name="field" description="Field Name to search for and show in result" />
+    <design:attribute name="secondaryField" description="Secondary field to show in result" />
+</design:component>

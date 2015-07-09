@@ -1,0 +1,11 @@
+.THIS.container {
+    width: 100%;
+}
+
+.THIS .hidden {
+    display: none;
+}
+
+.THIS {
+    margin-top: 20px;
+}
