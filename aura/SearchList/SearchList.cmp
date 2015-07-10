@@ -37,9 +37,7 @@
                                             {! result.secondaryField }
                                         </aura:if>
                                     </p>
-                                    <aura:if isTrue="{! v.salesforce1 }">
-                                    	<button class="btn btn-info details-button" onclick="{! c.navigateToObject }" data-list-index="{! index }">Show Details</button>
-                                    </aura:if>    
+                                    <button class="btn btn-info details-button" onclick="{! c.navigateToObject }" data-list-index="{! index }">Show Details</button>
                                 </a>
                             </aura:iteration>
                         </div>

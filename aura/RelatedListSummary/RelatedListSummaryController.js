@@ -35,9 +35,10 @@
         // If the count is greater than 0 only then navigate
         if (component.get('v.objects')[index].count > 0) {
             
-            if ($A.getContext().getApp() == 'one:one') {
-                var relatedListEvent = $A.get("e.force:navigateToRelatedList");
-                
+            
+            var relatedListEvent = $A.get("e.force:navigateToRelatedList");
+            
+            if (relatedListEvent) {
                 var params = {
                     "relatedListId": component.get('v.objects')[index].name,
                     "parentRecordId": component.get("v.contextId")

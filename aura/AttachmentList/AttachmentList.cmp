@@ -2,14 +2,50 @@
 	<aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
     
     <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css" />
-    <ltng:require scripts="/resource/libraries/libraries/app/common.js" />
+    <ltng:require scripts="/resource/libraries/libraries/app/common.js" afterScriptsLoaded="{!c.initialize}"/>
     
     <div class="container hidden">
-        <div class="panel panel-default bootcards-chart">
-            <div class="panel-heading">
-                <h3 class="panel-title">Attachments</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title pull-left">Attachments</h3>
+                <div class="btn-group pull-right">
+                    <button class="btn btn-success btn-file">
+                        Upload File
+                        <input type="file" aura:id="fileUpload" onchange="{! c.uploadFile }" />
+                    </button>
+                    <button class="btn btn-success btn-file">
+                        Upload Image
+                        <input type="file" aura:id="imageUpload" accept="image/*" capture="camera" onchange="{! c.uploadImage }" />
+                    </button>
+                </div>
             </div>
-            <div class="attachment-list"></div>
+            <aura:if isTrue="{! v.isLoading != true }">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="active">
+                                <th>Name</th>
+                                <th>Content Type</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.attachments}" var="attachment" indexVar="index">
+                                <tr>
+                                    <td width="50%"><a href="#" onclick="{! c.navigateToRecord }" data-list-index="{! index }">{! attachment.Name }</a></td>
+                                    <td width="40%">{! attachment.ContentType }</td>
+                                    <td width="10%"><button class="btn btn-danger btn-sm" onclick="{! c.deleteFile }" data-list-index="{! index }">Delete</button></td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </aura:if>
+            <aura:if isTrue="{! v.isLoading }">
+                <div class="loading">
+                    <center><ui:spinner /></center>
+                </div>
+            </aura:if>
         </div>
     </div>
 </aura:component>

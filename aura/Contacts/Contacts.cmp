@@ -1,5 +1,0 @@
-<aura:component implements="force:appHostable">
-    
-    <c:ContactsNearby maxDistance="5000"/>
-    
-</aura:component>

@@ -78,4 +78,50 @@ public class DNuggetGenericLightningHelper {
         
         return result;
     }
+    
+    @AuraEnabled
+    public static Map<String, String> uploadAttachment(String parentId, String fileName, String base64Data, String contentType) {
+        
+        Map<String, String> result = new Map<String, String>();
+        
+        try {
+        	String utf8base64Data = EncodingUtil.urlDecode(base64Data, 'UTF-8');
+        
+            Attachment a = new Attachment();
+            a.parentId = parentId;
+     
+            a.Body = EncodingUtil.base64Decode(utf8base64Data);
+            a.Name = fileName;
+            a.ContentType = contentType;
+            
+            insert a;
+            
+            result.put('Status', 'Success');
+            
+        } catch(Exception e) {
+            result.put('Status', 'Error');
+            result.put('ErrorMessage', e.getMessage());
+        }
+        
+        return result;
+    }
+    
+    @AuraEnabled
+    public static Map<String, String> deleteAttachment(String idForDelete) {
+        
+        Map<String, String> result = new Map<String, String>();
+        
+        try {    	
+            Attachment a = [SELECT Id FROM Attachment WHERE Id = :idForDelete];
+            delete a;
+
+            result.put('Status', 'Success');
+            
+        } catch(Exception e) {
+            result.put('Status', 'Error');
+            result.put('ErrorMessage', e.getMessage());
+        }
+        
+        return result;
+    }
 }
