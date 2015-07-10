@@ -61,4 +61,66 @@ public class TST_DNuggetgenericLightningHelper {
         System.assertEquals(true, result.containsKey('Notes'));
         System.assertEquals(1, result.get('Notes'));
     }
+    
+    public static testmethod void deleteAttachment_deleteAttachmentWhichExists_ShouldDeleteAttachment() {
+        
+        Account a = new Account();
+        a.Name = 'Test';
+        insert a;
+        
+        Attachment attach = new Attachment();
+        attach.name = 'Test';
+        attach.ParentId = a.Id;
+        attach.body = Blob.valueOf('Test');
+        insert attach;
+        
+        Test.startTest();
+        Map<String, String> status = DNuggetGenericLightningHelper.deleteAttachment(attach.Id);
+        Test.stopTest();
+        
+        List<Attachment> attachments = [SELECT Id FROM Attachment WHERE Id = :a.Id];
+        System.assertEquals('Success', status.get('Status'));
+        System.assertEquals(0, attachments.size());
+    }
+    
+    public static testmethod void deleteAttachment_deleteAttachmentWhichDoesNotExist_ShouldThrowError() {
+        
+        Test.startTest();
+        Map<String, String> status = DNuggetGenericLightningHelper.deleteAttachment('ErrorId');
+        Test.stopTest();
+        
+        System.assertEquals('Error', status.get('Status'));
+    }
+    
+    public static testmethod void uploadAttachment_uploadValidAttachment_ShouldReturnSuccess() {
+        
+        Account a = new Account();
+        a.Name = 'Test';
+        insert a;
+        
+        String base64Data = EncodingUtil.base64Encode(Blob.valueOf('Test'));
+        
+        Test.startTest();
+    	Map<String, String> status = DNuggetGenericLightningHelper.uploadAttachment(a.Id, 'myfile.txt', base64Data, 'text');
+        Test.stopTest();
+        
+        List<Attachment> attachments = [SELECT Id FROM Attachment];
+        System.assertEquals('Success', status.get('Status'));
+        System.assertEquals(1, attachments.size());
+    }
+    
+    public static testmethod void uploadAttachment_uploadInvalidAttachment_ShouldThrowError() {
+        
+        Account a = new Account();
+        a.Name = 'Test';
+        insert a;
+        
+        String base64Data = 'Test';
+        
+        Test.startTest();
+    	Map<String, String> status = DNuggetGenericLightningHelper.uploadAttachment('Test', 'myfile.txt', base64Data, 'text');
+        Test.stopTest();
+        
+        System.assertEquals('Error', status.get('Status'));
+    }
 }

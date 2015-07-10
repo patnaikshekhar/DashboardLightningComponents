@@ -65,9 +65,10 @@
     
     navigateToObject: function(component, event, helper) {
         var selectedIndex = event.target.getAttribute('data-list-index');
-        if (component.get('v.salesforce1')) {
-            var navEvt = $A.get("e.force:navigateToSObject");
-            
+        
+        var navEvt = $A.get("e.force:navigateToSObject");
+        
+        if (navEvt) {
             navEvt.setParams({
                 "recordId": component.get('v.objects')[selectedIndex].Id,
                 "slideDevName": "detail"
@@ -75,6 +76,7 @@
             
             navEvt.fire();
         }
+        
     },
     
     changeSearchString: function(component, event, helper) {
