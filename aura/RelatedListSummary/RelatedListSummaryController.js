@@ -3,29 +3,12 @@
         
         // Make component visible
 		$A.util.removeClass(component.getElement(), 'hidden');
-		
-        // Run method with inputs
-        var action = component.get("c.getRelationshipCounts");
-        action.setParams({
-            objectName: event.getParam('object'),
-            objectId: event.getParam('id'),
-            types: component.get('v.types')
-        });
-        
-        DNuggetCommonLibrary.runServerMethod(action, function(results) {
-            // Transform the result to be displayed on the UI
-            var resultObj = Object.keys(results).map(function(value, index) {
-                return {
-                    name: value,
-                    count: results[value]
-                }
-            });
-            
-            component.set('v.objects', resultObj);
-        });
         
         // Set context id to be used in navigation
         component.set('v.contextId', event.getParam('id'));
+        component.set('v.contextObject', event.getParam('object'));
+        
+        helper.refresh(component, event.getParam('object'), event.getParam('id'));
 	},
     
     gotoRelatedlist: function(component, event, helper) {
@@ -49,5 +32,11 @@
                 relatedListEvent.fire();
             }
         }
+    },
+    
+    recordUpdated: function(component, event, helper) {
+        var obj = component.get('v.contextObject');
+        var id = component.get('v.contextId');
+        helper.refresh(component, obj, id);
     }
 })

@@ -1,5 +1,6 @@
 <aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
     <aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
+    <aura:handler event="c:DNuggetRecordUpdated" action="{!c.recordUpdated}"/>
     
     <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css" />
     <ltng:require scripts="/resource/libraries/libraries/app/common.js" />

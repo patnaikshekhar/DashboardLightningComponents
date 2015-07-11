@@ -1,0 +1,22 @@
+.THIS hidden {
+    display: none;
+}
+
+.THIS.container {
+    width: 100%;
+    height: 100%;
+}
+
+.THIS {
+    margin-top: 20px;
+}
+
+.THIS .canvas canvas {
+    margin-top: 20px;
+    width: 100%;
+    min-height: 200px;
+}
+
+.THIS .loading {
+    
+}

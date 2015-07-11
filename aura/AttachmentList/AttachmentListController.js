@@ -43,5 +43,11 @@
             
             navEvt.fire();
         }
-    }
+    },
+    
+    recordUpdated: function(component, event, helper) {
+        if (event.getParam('object') == 'Attachments') {
+            helper.refresh(component, component.get('v.objectId'));
+        }
+	}
 })
