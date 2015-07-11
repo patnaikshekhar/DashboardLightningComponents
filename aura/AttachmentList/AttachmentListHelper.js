@@ -25,9 +25,8 @@
         });
         
         DNuggetCommonLibrary.runServerMethod(action, function(result) {
-            console.log(result);
             component.set('v.isLoading', false);
-            thishelper.refresh(component, component.get('v.objectId'));
+            thishelper.triggerRecordUpdatedEvent();
         });
     },
     
@@ -63,7 +62,13 @@
         
         DNuggetCommonLibrary.runServerMethod(action, function(result) {
             component.set('v.isLoading', false);
-            thishelper.refresh(component, component.get('v.objectId'));
+            thishelper.triggerRecordUpdatedEvent();
         });
+    },
+    
+    triggerRecordUpdatedEvent: function() {
+        $A.get("e.c:DNuggetRecordUpdated").setParams({
+            object: 'Attachments'
+       	}).fire();
     }
 })
