@@ -20,4 +20,6 @@ This is a list of components to help you create dashboard style apps very quickl
 * Linked In Profile - The linked in profile of the user
 * Nearby - Find a list of contacts and account close to you
 
+I've created a [presentation](http://patnaikshekhar.github.io/DashboardLightningComponents) which gives an overview of the various component.
+
 This is can be installed via an [unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t240000009fEv). Feel free to contribute to the source code and make this awesome.
