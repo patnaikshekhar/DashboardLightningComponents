@@ -22,4 +22,7 @@ This is a list of components to help you create dashboard style apps very quickl
 
 I've created a [presentation](http://patnaikshekhar.github.io/DashboardLightningComponents) which gives an overview of the various component.
 
-This is can be installed via an [unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t240000009fF0). Feel free to contribute to the source code and make this awesome.
+This is can be installed via an [unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t240000009g0H). Feel free to contribute to the source code and make this awesome.
+
+## Changes in Version 1.2
+- Added animation to bar, donut and pie charts
