@@ -47,11 +47,17 @@
             
         data.unshift(labels[component.get('v.groupingField')]);
         
-        c3.generate({
+        var initialData = aggregateResult.map(function(obj) {
+            return 0;
+        });
+        
+        initialData.unshift(labels[component.get('v.groupingField')]);
+        
+        var graph = c3.generate({
             bindto: component.getElement().querySelector('.chart-canvas'),
             data: {
                 columns: [
-                    data    
+                    initialData    
                 ],
                 type: 'bar'
             },
@@ -67,22 +73,36 @@
                 pattern: ['#5cb85c', '#5bc0de', '#f0ad4e', '#d9534f', '#2e6da4', '#4cae4c', '#46b8da', '#eea236', '#d43f3a']
             }
         });
+        
+        
     },
     
     generateGraphPie: function(component, aggregateResult, labels, type) {
         var data = aggregateResult.map(function(obj) {
             return [obj[component.get('v.groupingField')], obj['expr0']];
         });
-
-        c3.generate({
+		
+        var initialData = aggregateResult.map(function(obj) {
+            return [obj[component.get('v.groupingField')], 0];
+        });
+        
+        var graph = c3.generate({
             bindto: component.getElement().querySelector('.chart-canvas'),
             data: {
-                columns: data,
+                columns: initialData,
             	type: type.toLowerCase()
             },
             color: {
                 pattern: ['#5cb85c', '#5bc0de', '#f0ad4e', '#d9534f', '#2e6da4', '#4cae4c', '#46b8da', '#eea236', '#d43f3a']
             }      
         });
+        
+        setTimeout(function() {
+            if (graph) {
+                graph.load({
+                    columns: data
+                });
+            }
+        } , 500);
     }
 })
