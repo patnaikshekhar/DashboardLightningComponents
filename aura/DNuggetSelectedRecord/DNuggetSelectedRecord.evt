@@ -1,4 +1,4 @@
-<aura:event type="APPLICATION" description="Event template">
+<aura:event type="APPLICATION" description="This event is triggered by driver components when a primary record is selected">
     <aura:attribute name="object" type="String"/>
     <aura:attribute name="id" type="String"/>
 </aura:event>

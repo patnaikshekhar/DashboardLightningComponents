@@ -1,5 +1,17 @@
 <aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
-	<aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
+	
+    <!-- 
+	Hierarchy chart allows the user to browse through an 
+	object hierarchy. This can be account, contact or any 
+	custom object. This chart is built for touch and supports 
+	pinch to zoom and click and span. Clicking on a node in 
+	the hierarchy centres the node as well as changes the 
+	search query to point to the node. The current node is 
+	also highlighted so that the user can visualize where 
+	in the hierarchy the object lies
+	-->
+    
+    <aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
     
     <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css,/resource/libraries/libraries/c3/c3.min.css" />
     <ltng:require scripts="/resource/libraries/libraries/app/common.js, /resource/libraries/libraries/d3/d3.min.js, /resource/libraries/libraries/c3/c3.min.js" />

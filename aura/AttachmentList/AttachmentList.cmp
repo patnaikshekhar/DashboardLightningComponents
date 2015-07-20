@@ -1,5 +1,13 @@
 <aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
-	<aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
+	
+    <!--
+	This component shows a list of attachments as well as 
+	lets the user upload and delete existing attachment. 
+	Additionally, the user can directly upload an image 
+	from the gallery or from the camera (depending on the 
+	phone support)
+	-->
+    <aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
     <aura:handler event="c:DNuggetRecordUpdated" action="{!c.recordUpdated}"/>
     <aura:registerEvent name="recordUpdated" type="c:DNuggetRecordUpdated"/>
     

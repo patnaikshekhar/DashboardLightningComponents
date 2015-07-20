@@ -1,5 +1,14 @@
 <aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
-	<aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
+	
+    <!--
+	This component allows the user to create a simple chart 
+	based on a related object and summarize based on a 
+	single field. The chart can be a bar, donut or a pie. 
+	Additionally, you can decide to summarize, average or 
+	count the related field
+	-->
+    
+    <aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
     
     <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css,/resource/libraries/libraries/c3/c3.min.css" />
     <ltng:require scripts="/resource/libraries/libraries/app/common.js, /resource/libraries/libraries/d3/d3.min.js, /resource/libraries/libraries/c3/c3.min.js" />

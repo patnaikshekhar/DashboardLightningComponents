@@ -1,5 +1,11 @@
 <aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
-	<aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
+	
+    <!--
+	This component allows a user to upload a signature as 
+	an attachment
+	-->
+    
+    <aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
     <aura:registerEvent name="recordUpdated" type="c:DNuggetRecordUpdated"/>
     
     <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css,/resource/libraries/libraries/c3/c3.min.css" />

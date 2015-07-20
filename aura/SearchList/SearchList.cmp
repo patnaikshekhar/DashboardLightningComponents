@@ -1,5 +1,15 @@
 <aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
     
+    <!--
+	This is a driver component and drives the context 
+    of the whole page. This component allows you to search 
+    for an object by name. Once an object is find it 
+    triggers a signal so that the whole page changes to be 
+    focused around the object. Also on clicking the show 
+    details button, within Salesforce1, the user is 
+    navigated to the object detail page.
+    -->
+    
     <ltng:require styles="/resource/libraries/libraries/bootstrap/css/bootstrap.min.css,/resource/libraries/libraries/bootstrap/css/bootcards-desktop.min.css, /resource/libraries/libraries/fontawesome/css/font-awesome.min.css" />
 	<ltng:require scripts="/resource/libraries/libraries/app/common.js" afterScriptsLoaded="{!c.initialize}"/>
     

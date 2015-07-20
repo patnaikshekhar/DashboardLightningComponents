@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>This component allows you to show a count of related records. On clicking on the icon one is navigated to that specific detail screen</aura:description>
+</aura:documentation>

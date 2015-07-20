@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>Hierarchy chart allows the user to browse through an object hierarchy. This can be account, contact or any custom object. This chart is built for touch and supports pinch to zoom and click and span. Clicking on a node in the hierarchy centres the node as well as changes the search query to point to the node. The current node is also highlighted so that the user can visualize where in the hierarchy the object lies</aura:description>
+</aura:documentation>
