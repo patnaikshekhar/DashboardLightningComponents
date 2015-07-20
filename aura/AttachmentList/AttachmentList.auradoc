@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>This component shows a list of attachments as well as lets the user upload and delete existing attachment. Additionally, the user can directly upload an image from the gallery or from the camera (depending on the phone support)</aura:description>
+</aura:documentation>

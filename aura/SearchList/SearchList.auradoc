@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>This is a driver component and drives the context of the whole page. This component allows you to search for an object by name. Once an object is find it triggers a signal so that the whole page changes to be focused around the object. Also on clicking the show details button, within Salesforce1, the user is navigated to the object detail page.</aura:description>
+</aura:documentation>

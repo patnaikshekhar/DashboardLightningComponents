@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>This component allows you to show a map and directions to a particular location. You can configure the fields on the object which will point to the address fields. Clicking on a driver component such as the Search List will automatically change the map</aura:description>
+</aura:documentation>

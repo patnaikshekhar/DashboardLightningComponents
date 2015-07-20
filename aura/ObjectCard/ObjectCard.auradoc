@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>This component allows you to show fields for a specific object. For example you can show the phone or email address for a Contact, or the Order Number for an Order. The card generates the fields in a manner so that URL fields open the browser, phone fields make an outgoing call and email field open the email app.</aura:description>
+</aura:documentation>

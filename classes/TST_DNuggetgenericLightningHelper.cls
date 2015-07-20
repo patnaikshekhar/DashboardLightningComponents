@@ -1,3 +1,8 @@
+/**
+ * This is the Test for the helper class for Dashboard Lightning Components
+ * @version 1.1
+ * @author Shekhar Patnaik
+ **/
 @isTest
 public class TST_DNuggetgenericLightningHelper {
 	

@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>This component allows a user to upload a signature as an attachment</aura:description>
+</aura:documentation>

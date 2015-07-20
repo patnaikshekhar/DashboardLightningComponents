@@ -1,4 +1,7 @@
 <aura:application >
+    
+    <!-- Sample Aura Application created with Dashboard Tags -->
+    
     <style>
         .full-width {
         	width:100%;
@@ -14,7 +17,7 @@
     </style>
     <div class="full-width">
         <c:SearchList object="Account" secondaryField="Phone" />
-        <c:SignaturePad />
+        <c:SimpleChart graphType="bar" />
     </div>
     
 </aura:application>

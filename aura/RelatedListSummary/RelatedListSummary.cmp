@@ -1,4 +1,10 @@
 <aura:component controller="DNuggetGenericLightningHelper" implements="flexipage:availableForAllPageTypes">
+    
+    <!--
+	This component allows you to show a count of related 
+	records. On clicking on the icon one is navigated to 
+	that specific detail screen
+	-->
     <aura:handler event="c:DNuggetSelectedRecord" action="{!c.recordSelected}"/>
     <aura:handler event="c:DNuggetRecordUpdated" action="{!c.recordUpdated}"/>
     
